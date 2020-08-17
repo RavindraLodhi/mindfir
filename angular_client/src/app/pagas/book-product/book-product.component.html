@@ -1,0 +1,31 @@
+<div style="height: 80vh;">
+  <div style=" height: 100%; " class="pl-4 pr-4">
+         
+    <div class="wrapper fadeInDown"  style="height: 40em;">
+      <div id="formContent">
+  
+        <div class="fadeIn first">
+          <h3>Book Product</h3>
+        </div>
+        <form>
+          <select  *ngIf="isProduct == false" name="cars" id="cars" style=" height: 43px;width: 24em;" (change)="customerSelect($event.target.value)">
+            <option  >Select Product</option>
+            <option  *ngFor="let costomer of allCustomers"  [value]="costomer._id">{{costomer.product_title}}</option>
+          </select>
+          <select  *ngIf="isProduct == true" name="cars" id="cars" style=" height: 43px;width: 24em;" (change)="customerSelect($event.target.value)">
+            <option >Select Customer</option>
+            <option  *ngFor="let costomer of allCustomers" [value]="costomer._id">{{costomer.customer_name}}</option>
+          </select>
+          <input type="text" id="transation_type" class="fadeIn third" [formControl]="transation_type" name="transation_type" placeholder="Transaction Type">
+          <input type="number" id="quantity" class="fadeIn third" [formControl]="quantity" name="quantity" placeholder="quantity">
+          <input type="number" id="transation_id_parent" class="fadeIn second" [formControl]="transation_id_parent"
+          name="transation_id_parent" placeholder="Parent Id ">
+          <input type="submit" (click)="onSubmit()" class="fadeIn fourth" value="Add Product">
+        </form>
+        <div id="formFooter">
+        </div>
+    
+      </div>
+    </div>
+  </div>
+  

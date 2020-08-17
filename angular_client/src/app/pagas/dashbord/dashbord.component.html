@@ -1,0 +1,177 @@
+
+<!-- <app-app-layout></app-app-layout> -->
+<!-- <div class="main h-95" > -->
+  <!-- <div class="row h-100" > -->
+    <!-- <div class="col-1" id='formContent_test' style=" height: 100%;">
+      side bar
+    </div> -->
+    <!-- <div class="col-11"  style=" height: 100%;">
+       <div class="row">
+         <div class="col-3 box m-2 ml-4 mt-5">
+          Total customers
+         </div>
+         <div class="col-3 box m-2 mt-5">
+          Total  products
+         </div>
+         <div class="col-3 box m-2 mt-5">
+          Transactions
+         </div>
+         <div class="col-2 box m-2 ml-4 mt-5">
+            Items
+         </div>
+       </div>
+       <div>
+        <button mat-raised-button color="primary" class="ml-2 mt-2">Add Customer</button>
+       </div>
+       <div class="mat-elevation-z8 m-2 mr-4 formContent_test" style=" overflow: auto;height: 68%;">
+        <table mat-table [dataSource]="dataSource" style="width: 100%;">
+      
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Weight </th>
+            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+          <ng-container matColumnDef="Action" >
+            <th mat-header-cell *matHeaderCellDef style="width: 224px !important; "> Action </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-raised-button color="primary">View</button>
+              <button mat-raised-button color="warn">Delete</button>
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+      
+    </div> -->
+  <!-- </div> -->
+<!-- </div> -->
+
+<!-- <div style="height: 80vh;">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Responsive Navigation</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <a href="#" mat-button>Menu Item 1</a>
+        <a href="#" mat-button>Menu Item 2</a>
+        <a href="#" mat-button>Menu Item 3</a>
+        <a href="#" mat-button>Menu Item 4</a>
+        <a href="#" mat-button>Menu Item 5</a>
+        <a href="#" mat-button>Menu Item 6</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+        <a href="#" mat-list-item>Menu Item 1</a>
+        <a href="#" mat-list-item>Menu Item 2</a>
+        <a href="#" mat-list-item>Menu Item 3</a>
+        <a href="#" mat-list-item>Menu Item 4</a>
+        <a href="#" mat-list-item>Menu Item 5</a>
+        <a href="#"mat-list-item>Menu Item 6</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <div style=" height: 100%; " class="pl-4 pr-4">
+        <div class="row">
+          <div class="col-3 box m-2 ml-4 mt-5">
+           Total customers
+          </div>
+          <div class="col-3 box m-2 mt-5">
+           Total  products
+          </div>
+          <div class="col-3 box m-2 mt-5">
+           Transactions
+          </div>
+          <div class="col-2 box m-2 ml-4 mt-5">
+             Items
+          </div>
+        </div>
+        <div>
+         <button mat-raised-button color="primary" class="ml-2 mt-2" (click)="addCustomer()">Add Customer</button>
+        </div>
+        <div class="mat-elevation-z8 m-2 mr-4 formContent_test" style=" overflow: auto;height: 68%;">
+         <table mat-table [dataSource]="dataSource" style="width: 100%;">
+       
+           <ng-container matColumnDef="position">
+             <th mat-header-cell *matHeaderCellDef> No. </th>
+             <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+           </ng-container>
+       
+           <ng-container matColumnDef="name">
+             <th mat-header-cell *matHeaderCellDef> Name </th>
+             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+           </ng-container>
+       
+           <ng-container matColumnDef="weight">
+             <th mat-header-cell *matHeaderCellDef> Weight </th>
+             <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+           </ng-container>
+       
+           <ng-container matColumnDef="symbol">
+             <th mat-header-cell *matHeaderCellDef> Symbol </th>
+             <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+           </ng-container>
+           <ng-container matColumnDef="Action" >
+             <th mat-header-cell *matHeaderCellDef style="width: 224px !important; "> Action </th>
+             <td mat-cell *matCellDef="let element">
+               <button mat-raised-button color="primary">View</button>
+               <button mat-raised-button color="warn">Delete</button>
+             </td>
+           </ng-container>
+       
+           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+         </table>
+         
+       
+         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+       </div>
+       
+     </div>
+    </mat-sidenav-content> 
+  </mat-sidenav-container>
+</div> -->
+
+<div style=" height: 100%; " class="pl-4 pr-4">
+  <div class="row">
+    <div class="col-3 box m-2 ml-4 mt-5">
+     Total customers
+    </div>
+    <div class="col-3 box m-2 mt-5">
+     Total  products
+    </div>
+    <div class="col-3 box m-2 mt-5">
+     Transactions
+    </div>
+    <div class="col-2 box m-2 ml-4 mt-5">
+       Items
+    </div>
+  </div>
+</div>
+<app-customer-list></app-customer-list>

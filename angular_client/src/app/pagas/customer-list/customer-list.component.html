@@ -1,0 +1,40 @@
+<div class="ml-3">
+  <button mat-raised-button color="primary" class="ml-2 mt-2" (click)="addCustomer()">Add Customer</button>
+ </div>
+ <div class="formContent_test m-2 mat-elevation-z8 ml-4 mr-4 mr-5" style=" overflow: auto;height: 68%;">
+  <table mat-table [dataSource]="dataSource" style="width: 100%;">
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="customer_name">
+      <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.customer_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="_id">
+      <th mat-header-cell *matHeaderCellDef> Customer Id </th>
+      <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="customer_mail">
+      <th mat-header-cell *matHeaderCellDef> Customer mail </th>
+      <td mat-cell *matCellDef="let element"> {{element.customer_mail}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Action" >
+      <th mat-header-cell *matHeaderCellDef style="width: 224px !important; "> Action </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary" (click)="viewCustomer(element)">View</button>
+        <button mat-raised-button color="warn" (click)="deleteCus(element._id)">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

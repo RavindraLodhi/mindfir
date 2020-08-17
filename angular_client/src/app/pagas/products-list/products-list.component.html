@@ -1,0 +1,51 @@
+<div class="ml-3">
+  <button mat-raised-button color="primary" class="ml-2 mt-2" (click)="addCustomer()">Add New Product</button>
+  <button mat-raised-button color="primary" class="ml-2 mt-2" (click)="downloadPDF()">Dashboard</button>
+</div>
+<div class="formContent_test m-2 mat-elevation-z8 ml-4 mr-4 mr-5" style=" overflow: auto;height: 68%;">
+  <table mat-table [dataSource]="dataSource" style="width: 100%;"  id="content" #content>
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+    <ng-container matColumnDef="product_title">
+      <th mat-header-cell *matHeaderCellDef> Product Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.product_title}} </td>
+    </ng-container>
+    <ng-container matColumnDef="quantity_total">
+      <th mat-header-cell *matHeaderCellDef> Totel quantity </th>
+      <td mat-cell *matCellDef="let element"> {{element.quantity_total}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity_booked">
+      <th mat-header-cell *matHeaderCellDef> Booked </th>
+      <td mat-cell *matCellDef="let element"> {{element.quantity_booked}} </td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+    <ng-container matColumnDef="_id">
+      <th mat-header-cell *matHeaderCellDef> Product Id </th>
+      <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Available_Quantity">
+      <th mat-header-cell *matHeaderCellDef> Available Quantity </th>
+      <td mat-cell *matCellDef="let element"> {{element.Available_Quantity}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef style="width: 224px !important; "> Action </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary" (click)="assignProduct(element)">Book Now</button>
+        <button mat-raised-button color="warn" (click)="deletProduct(element._id)">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

@@ -1,0 +1,88 @@
+<mat-card class="container1 m-2 mr-4">
+  <mat-card-header>
+   
+    <mat-card-title>User Informations</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+<div class="container1">
+  <form class="formwidth" (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <table class=" row fullwidth" cellspacing="0" style=" width: 100%;">
+         <div class="col-3 pl-4">
+          <td>
+            <mat-form-field class="fullwidth">
+              <input matInput placeholder="Customer Name" id="CN" [(ngModel)]="customer_name" name="CN">
+            </mat-form-field>
+          </td>
+         </div>
+         <div class="col-3">
+          <td>
+            <mat-form-field class="fullwidth">
+              <input matInput placeholder="E-Mail" id="CM" [(ngModel)]="customer_mail" name="CM">
+            </mat-form-field>
+          </td>
+         </div>
+         <div class="col-3 ">
+          <td>
+            <mat-form-field class="fullwidth">
+              <input matInput placeholder="Customer Id" id="id" [(ngModel)]="_id" name="id">
+            </mat-form-field>
+          </td>
+         </div>
+         <div class="col-3">  
+          <td>
+            <mat-form-field class="fullwidth">
+              <input matInput placeholder="Position" id="p" [(ngModel)]="position" name="p">
+            </mat-form-field>
+          </td>
+         </div>
+ 
+    </table>
+
+  </form>
+</div>
+  
+  </mat-card-content>
+</mat-card>
+<button mat-raised-button color="primary" class="ml-2 mt-2" (click)="addProduct()">Add Product</button>
+<div class="mat-elevation-z8 m-2 mr-4 formContent_test" style=" overflow: auto;height: 68%;">
+  <table mat-table [dataSource]="dataSource" style="width: 100%;">
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="_id">
+      <th mat-header-cell *matHeaderCellDef> Transaction ID </th>
+      <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="product_id">
+      <th mat-header-cell *matHeaderCellDef>Porduct ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.product_id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef> Quantity </th>
+      <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+    </ng-container>
+    <ng-container matColumnDef="transation_date_time">
+      <th mat-header-cell *matHeaderCellDef> Transaction Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.transation_date_time}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Action" >
+      <th mat-header-cell *matHeaderCellDef style="width: 224px !important; "> Action </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary" (click)="viewCustomer()">View</button>
+        <button mat-raised-button color="warn">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

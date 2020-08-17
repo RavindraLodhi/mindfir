@@ -1,0 +1,16 @@
+.main{
+overflow: auto;
+height: 92%;
+
+}
+.box{
+height: 100px;
+background: #fff;
+padding: 30px;
+position: relative;
+padding: 0px;
+-webkit-box-shadow: 0 0px 15px 0 rgba(0,0,0,0.3);
+box-shadow: 0 0px 15px 0 rgba(0,0,0,0.3);
+text-align: center;
+}
+

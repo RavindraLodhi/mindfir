@@ -1,0 +1,26 @@
+<div style="height: 80vh;">
+  <div style=" height: 100%; " class="pl-4 pr-4">
+         
+    <div class="wrapper fadeInDown"  style="height: 40em;">
+      <div id="formContent">
+  
+        <div class="fadeIn first">
+          <h3>Add Customer</h3>
+        </div>
+        <form>
+          <input type="text" id="product_title" class="fadeIn third" [formControl]="product_title" name="product_title" placeholder=" Product Name">
+          <input type="text" id="quantity_total" class="fadeIn third" [formControl]="quantity_total" name="quantity_total" placeholder="Product Number">
+          <input type="text" id="price" class="fadeIn second" [formControl]="price"
+          name="login" placeholder="Price of product">
+          <input type="submit" (click)="onSubmit()" class="fadeIn fourth" value="Log In">
+        </form>
+        <div id="formFooter">
+        </div>
+    
+      </div>
+    </div>
+  
+   
+   
+  </div>
+  
